@@ -22,7 +22,8 @@ prisma/*.db-journal
 # Version control
 .git
 .gitignore
-.github
+.github/*
+!.github/assets/images/
 
 # IDE
 .vscode

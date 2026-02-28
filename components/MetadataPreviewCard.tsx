@@ -62,7 +62,7 @@ export function MetadataPreviewCard({
   const displayArtist = applyArtistDelimiter(meta.artist, artistDelimiter);
 
   return (
-    <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl text-sm">
+    <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl text-sm">
       <div className="flex items-start gap-4">
         {meta.coverUrl && (
           <div className="w-16 h-16 relative flex-shrink-0">
@@ -77,44 +77,44 @@ export function MetadataPreviewCard({
         )}
         <div className="flex-1 grid grid-cols-2 gap-x-4 gap-y-1">
           <div>
-            <span className="text-blue-600 dark:text-blue-400 font-medium">
+            <span className="text-red-600 dark:text-red-400 font-medium">
               Title:
             </span>{" "}
             {meta.title}
           </div>
           <div>
-            <span className="text-blue-600 dark:text-blue-400 font-medium">
+            <span className="text-red-600 dark:text-red-400 font-medium">
               Artist:
             </span>{" "}
             {displayArtist}
           </div>
           <div>
-            <span className="text-blue-600 dark:text-blue-400 font-medium">
+            <span className="text-red-600 dark:text-red-400 font-medium">
               Album:
             </span>{" "}
             {meta.album || "—"}
           </div>
           <div>
-            <span className="text-blue-600 dark:text-blue-400 font-medium">
+            <span className="text-red-600 dark:text-red-400 font-medium">
               Year:
             </span>{" "}
             {meta.year || "—"}
           </div>
           <div>
-            <span className="text-blue-600 dark:text-blue-400 font-medium">
+            <span className="text-red-600 dark:text-red-400 font-medium">
               Track:
             </span>{" "}
             {meta.trackNumber || "—"}
           </div>
           <div>
-            <span className="text-blue-600 dark:text-blue-400 font-medium">
+            <span className="text-red-600 dark:text-red-400 font-medium">
               Genre:
             </span>{" "}
             {meta.genre || "—"}
           </div>
         </div>
       </div>
-      <p className="mt-2 text-xs text-blue-500 dark:text-blue-300">
+      <p className="mt-2 text-xs text-red-500 dark:text-red-300">
         Sources: {formatSourceLabel(meta.source)}
       </p>
     </div>

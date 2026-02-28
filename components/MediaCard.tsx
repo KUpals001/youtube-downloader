@@ -426,7 +426,7 @@ export function MediaCard({
             <button
               onClick={checkMetadata}
               disabled={previewLoading}
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg disabled:opacity-50"
+              className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium rounded-lg disabled:opacity-50"
             >
               {previewLoading ? "Checking…" : "🔍 Check Metadata"}
             </button>

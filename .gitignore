@@ -497,3 +497,5 @@ modules.xml
 *.ipr
 
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,jetbrains,webstorm,webstorm+iml,webstorm+all,nextjs,dotenv
+# Prisma local database
+/prisma/data/

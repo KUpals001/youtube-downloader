@@ -38,6 +38,7 @@ RUN apk add --no-cache \
     python3 \
     py3-pip \
     ffmpeg \
+    su-exec \
     && pip3 install --root-user-action=ignore --break-system-packages yt-dlp
 
 WORKDIR /app
@@ -52,6 +53,10 @@ COPY --from=base /app/public ./public
 COPY --from=base /app/lib ./lib
 COPY --from=base /app/components ./components
 
+# Copy entrypoint script
+COPY docker-entrypoint.sh ./
+RUN chmod +x docker-entrypoint.sh
+
 # Create non-root user and setup data directory
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nextjs -u 1001 && \
@@ -59,9 +64,7 @@ RUN addgroup -g 1001 -S nodejs && \
     chown -R nextjs:nodejs /app && \
     chmod 777 /app/data
 
-USER nextjs
-
 EXPOSE 3000
 
-# Run prisma migration then start app
-CMD ["sh", "-c", "npx prisma migrate deploy && npm start"]
+# Run entrypoint script
+ENTRYPOINT ["./docker-entrypoint.sh"]

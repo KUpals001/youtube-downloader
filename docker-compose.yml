@@ -1,3 +1,21 @@
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: app
+  description:
+    en_us: "A professional, feature-rich web application for downloading YouTube videos and playlists in high quality with automatic metadata tagging."
+  tagline:
+    en_us: "High-quality YouTube Video & Playlist Downloader"
+  developer: "elpideus"
+  author: "elpideus"
+  icon: "https://raw.githubusercontent.com/elpideus/youtube-downloader/main/.github/assets/images/logo.png"
+  thumbnail: "https://raw.githubusercontent.com/elpideus/youtube-downloader/main/.github/assets/images/app-screenshot.png"
+  title:
+    en_us: "YouTube Downloader"
+  category: "Download"
+  port_map: "3000"
+
 services:
   app:
     image: ghcr.io/elpideus/youtube-downloader:latest
@@ -10,6 +28,10 @@ services:
       DISCOGS_TOKEN: ${DISCOGS_TOKEN}
     volumes:
       - ytdl_data:/app/data
+    labels:
+      icon: "https://raw.githubusercontent.com/elpideus/youtube-downloader/main/.github/assets/images/logo.png"
+      description: "YouTube Downloader"
+      title: "YouTube Downloader"
 
 volumes:
   ytdl_data:

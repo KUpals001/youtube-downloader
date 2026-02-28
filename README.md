@@ -16,6 +16,7 @@ A professional, feature-rich web application for downloading YouTube videos and 
 -   **Smart Caching**: Uses Prisma and SQLite to cache metadata lookups for faster subsequent requests.
 -   **Premium UI**: Sleek, responsive design with dark mode support and real-time progress updates.
 -   **Docker Ready**: Easy deployment using Docker and Docker Compose.
+-   **CasaOS Support**: Optimized for CasaOS with built-in metadata and icons.
 
 ## 🛠️ Tech Stack
 
@@ -24,7 +25,7 @@ A professional, feature-rich web application for downloading YouTube videos and 
 -   **Database**: [SQLite](https://sqlite.org) with [Prisma ORM](https://prisma.io)
 -   **Downloader**: [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 -   **Media Processing**: [FFmpeg](https://ffmpeg.org/)
--   **Styling**: [Tailwind](https://tailwindcss.com)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com)
 
 ## 🚀 Getting Started
 
@@ -47,13 +48,21 @@ A professional, feature-rich web application for downloading YouTube videos and 
 
 The app will be available at `http://localhost:3000`.
 
+### 🏠 CasaOS Installation
+
+1.  Open your CasaOS dashboard.
+2.  Click on **App Store** -> **Custom Install**.
+3.  Paste the contents of [docker-compose.yml](docker-compose.yml) into the configuration area.
+4.  CasaOS will automatically recognize the metadata, icon, and port settings.
+5.  Click **Install**.
+
 ## ⚙️ Configuration
 
-The following environment variables can be configured in `.env`:
+The following environment variables can be configured:
 
 | Variable | Description | Default |
 | :--- | :--- | :--- |
-| `DATABASE_URL` | SQLite connection string | Required (`file:./data/ytdl.db`) |
+| `DATABASE_URL` | SQLite connection string | `file:./data/ytdl.db` |
 | `FFMPEG_LOCATION` | Path to FFmpeg binaries (if not in PATH) | Optional |
 | `YTDLP_PATH` | Path to yt-dlp binary (if not in PATH) | `yt-dlp` |
 | `DISCOGS_TOKEN` | Discogs API token for metadata | Optional |
@@ -84,4 +93,4 @@ This project is licensed under the GPLv3 License - see the [LICENSE](LICENSE) fi
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
-Made with ❤️ by elpideus
+Made with ❤️ by [elpideus](https://github.com/elpideus)
