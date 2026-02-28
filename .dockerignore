@@ -1,0 +1,49 @@
+# Dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+.pnpm-store
+
+# Next.js build output
+.next
+out
+
+# Prisma
+prisma/migrations/README.md
+prisma/*.db
+prisma/*.db-journal
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.development
+
+# Version control
+.git
+.gitignore
+.github
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Misc
+README.md
+LICENSE

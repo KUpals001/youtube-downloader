@@ -1,0 +1,16 @@
+services:
+  app:
+    image: ghcr.io/elpideus/youtube-downloader:latest
+    container_name: ytdl-app
+    restart: unless-stopped
+    ports:
+      - "3288:3000"
+    environment:
+      DATABASE_URL: "file:/app/data/ytdl.db"
+      DISCOGS_TOKEN: ${DISCOGS_TOKEN}
+    volumes:
+      - ytdl_data:/app/data
+
+volumes:
+  ytdl_data:
+    driver: local

@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model VideoMetadata {
+  // Primary key: YouTube video ID
+  id String @id @map("youtube_id")
+
+  // Original YouTube data
+  youtubeTitle String  @map("youtube_title")
+  channel      String
+  uploadDate   String? @map("upload_date") // YYYYMMDD
+
+  // Cleaned/normalized fields for searching
+  normalizedArtist String @map("normalized_artist")
+  normalizedTitle  String @map("normalized_title")
+
+  // Enriched metadata
+  album       String?
+  year        String? // 4-digit year
+  trackNumber String? @map("track_number")
+  genre       String?
+  source      String // 'musicbrainz', 'discogs', or 'youtube'
+
+  // Full metadata blob for future use
+  fullMetadata Json?
+
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Indexes for fast search
+  @@index([normalizedArtist, normalizedTitle])
+  @@index([youtubeTitle])
+  @@index([channel])
+  @@map("video_metadata")
+}

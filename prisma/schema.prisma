@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model VideoMetadata {
+  id String @id @map("youtube_id")
+
+  youtubeTitle String  @map("youtube_title")
+  channel      String
+  uploadDate   String? @map("upload_date")
+
+  normalizedArtist String @map("normalized_artist")
+  normalizedTitle  String @map("normalized_title")
+
+  album       String?
+  year        String?
+  trackNumber String? @map("track_number")
+  genre       String?
+  source      String
+
+  fullMetadata Json?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([normalizedArtist, normalizedTitle])
+  @@index([youtubeTitle])
+  @@index([channel])
+  @@map("video_metadata")
+}
