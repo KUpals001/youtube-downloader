@@ -59,7 +59,11 @@ export async function GET(req: NextRequest): Promise<Response> {
   if (!url) return Response.json({ error: "URL required" }, { status: 400 });
 
   const safeTitle = sanitize(ytTitle);
-  const args: string[] = ["--ignore-errors"];
+  const args: string[] = ["--ignore-errors", "--remote-components", "ejs:github"];
+
+  if (process.env.YTDLP_CACHE_DIR) {
+    args.push("--cache-dir", process.env.YTDLP_CACHE_DIR);
+  }
 
   if (mode === "video") {
     args.push(

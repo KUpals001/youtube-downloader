@@ -59,12 +59,17 @@ COPY --from=base /app/components ./components
 COPY docker-entrypoint.sh ./
 RUN chmod +x docker-entrypoint.sh
 
+# Set yt-dlp cache directory to a persistent location
+ENV YTDLP_CACHE_DIR=/app/data/cache
+
 # Create non-root user and setup data directory
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nextjs -u 1001 && \
     mkdir -p /app/data && \
+    mkdir -p $YTDLP_CACHE_DIR && \
     chown -R nextjs:nodejs /app && \
-    chmod 777 /app/data
+    chmod 777 /app/data && \
+    chmod 777 $YTDLP_CACHE_DIR
 
 EXPOSE 3000
 

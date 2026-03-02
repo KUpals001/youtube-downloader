@@ -47,7 +47,11 @@ export async function GET(req: NextRequest): Promise<Response> {
   if (!url) return Response.json({ error: "URL required" }, { status: 400 });
 
   return new Promise<Response>((resolve) => {
-    const proc = spawn(process.env.YTDLP_PATH || "yt-dlp", ["-J", "--flat-playlist", url]);
+    const args = ["-J", "--flat-playlist", "--remote-components", "ejs:github", url];
+    if (process.env.YTDLP_CACHE_DIR) {
+      args.unshift("--cache-dir", process.env.YTDLP_CACHE_DIR);
+    }
+    const proc = spawn(process.env.YTDLP_PATH || "yt-dlp", args);
     const out: Buffer[] = [];
     const err: Buffer[] = [];
 
