@@ -6,6 +6,7 @@ RUN apk add --no-cache \
     python3 \
     py3-pip \
     ffmpeg \
+    deno \
     && pip3 install --root-user-action=ignore --break-system-packages yt-dlp
 
 WORKDIR /app
@@ -39,6 +40,7 @@ RUN apk add --no-cache \
     py3-pip \
     ffmpeg \
     su-exec \
+    deno \
     && pip3 install --root-user-action=ignore --break-system-packages yt-dlp
 
 WORKDIR /app
